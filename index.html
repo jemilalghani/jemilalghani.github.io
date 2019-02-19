@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coda"
+      rel="stylesheet"
+    />
+    <title>おかえり</title>
+  </head>
+  <body>
+    <section id="header">
+      <h1 class="title one">ただいま</h1>
+      <h1 class="title two">おかえり</h1>
+      <div class="inner">
+        <a href="#"><img id="logo" src="./Anime Food/logo.jpg"/></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a class="nav about" href="#">About</a></li>
+            <li><a class="nav store" href="#">Store</a></li>
+            <li><a class="nav menu" href="#">Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section id="home">
+      <div class="video-box ramen">
+        <video id="ramen" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7587.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box egg">
+        <video id="egg" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7588.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box fish">
+        <video id="fish" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7589.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box chop">
+        <video id="chop" height="300" loop autoplay>
+          <source src="./Anime Food/IMG_7590.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box bento">
+        <video id="bento" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7591.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box takoyaki">
+        <video id="takoyaki" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7592.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-box cup">
+        <video id="cup" height="300" loop autoplay muted>
+          <source src="./Anime Food/IMG_7593.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+    <script src="scroll.js"></script>
+    <script>
+      window.addEventListener("resize", myFunction);
+      function myFunction() {
+        // console.log(window.innerWidth, window.innerHeight);
+      }
+    </script>
+  </body>
+</html>
