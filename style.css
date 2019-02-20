@@ -2,10 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 200vh;
+  /* height: 200vh; */
 }
 #header {
-  background: white;
+  background: rgba(255, 255, 255, 0.377);
   position: sticky;
   top: 0;
   width: 100%;
@@ -25,15 +25,16 @@ body {
   margin: 5px 0 0 0;
   width: 150px;
   border-radius: 100%;
-  transition: width 1s;
-  transition: transform 1s;
+  transition: width 0.4s;
+  transition: transform 0.5s;
+  filter: saturate(2);
 }
 #logo:hover {
-  transition: transform 1s;
-  transform: rotate(180deg);
+  /* transition: transform 0.5s; */
+  /* transform: rotate(180deg); */
 }
 .scroll-logo {
-  transition: width 1s;
+  transition: width 0.4s;
 }
 .title {
   position: absolute;
@@ -65,63 +66,156 @@ body {
   align-items: center;
   position: relative;
   z-index: 0;
-  transition: z-index 0.5s;
+  /* transition: z-index 0.5s; */
   transform: translateX(-50%);
+  border: rgba(128, 128, 128, 0.068) 1px solid;
+  transition: margin 0.5s;
 }
 .ramen {
   height: 200px;
   width: 500px;
-  top: 90px;
+  top: 70px;
   left: 30%;
-  z-index: 3;
+  z-index: 2;
+  filter: saturate(2);
 }
 .egg {
   height: 190px;
   width: 350px;
-  top: 0px;
+  top: 50px;
   left: 75%;
   z-index: 3;
+  filter: grayscale(300) saturate(3);
 }
 .fish {
   width: 300px;
   height: 300px;
-  top: -200px;
+  top: -220px;
   left: 50%;
-  z-index: 3;
+  filter: grayscale(200) saturate(2);
+  z-index: 4;
 }
 .chop {
   height: 300px;
   width: 500px;
   left: 50%;
-  top: -650px;
+  top: -685px;
   z-index: 2;
+  filter: saturate(1.5);
 }
 .bento {
   width: 200px;
   height: 200px;
-  z-index: 4;
-  top: -720px;
-  left: 65%;
+  z-index: 1;
+  top: -960px;
+  left: 30%;
+  visibility: hidden;
+}
+.pink {
+  width: 400px;
+  height: 280px;
+  background: rgba(232, 196, 87);
+  top: -1480px;
+  left: 29%;
+  filter: saturate(1.3);
+}
+.yellow {
+  width: 550px;
+  height: 100px;
+  background: rgba(62, 82, 96);
+  top: -1573px;
+  left: 68%;
+}
+.blue {
+  width: 100px;
+  height: 80px;
+  background: rgba(230, 78, 61);
+  top: -1990px;
+  left: 27%;
+}
+.site {
+  position: relative;
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  top: 220px;
+  z-index: 5;
+  font-size: 50px;
+  letter-spacing: 10px;
+  color: white;
+  text-shadow: 0 0 10px rgba(44, 44, 44, 0.5);
+  /* color: rgb(247, 192, 177); */
 }
 .cup {
-  top: -1240px;
-  left: 30%;
+  top: -1230px;
+  left: 27%;
   z-index: 3;
   width: 300px;
   height: 130px;
+  filter: grayscale(200) saturate(2);
 }
 .takoyaki {
-  top: -1130px;
+  top: -1150px;
   width: 400px;
   height: 300px;
-  left: 70%;
+  left: 75%;
   z-index: 1;
 }
 video {
   border-radius: 5px;
 }
+.titleAbout {
+  color: rgb(13, 29, 62);
+  font-weight: 700;
+  font-family: "Coda", cursive;
+  font-size: 50px;
+  margin: 0 0 30px 0;
+}
 #home {
   width: 100vw;
-  height: 600px;
+  height: 70vh;
+  /* height: calc(100vh - 40px); */
+  /* max-height: calc(100vh - 40px); */
   overflow: hidden;
+}
+#about {
+  width: 100%;
+  height: 100vh;
+  /* height: calc(100vh - 120px); */
+  /* max-height: calc(100vh - 120px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: blue; */
+  padding-top: 125px;
+}
+.about-box {
+  width: 40%;
+  height: 80%;
+  /* background: rgb(13, 29, 62); */
+  text-align: end;
+  padding: 25px;
+}
+.about-box > p {
+  color: rgb(13, 29, 62);
+  line-height: 1.6;
+  font-family: "Nunito", sans-serif;
+}
+.grid {
+  width: 40%;
+  height: 80%;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/JUVftf3_hFoke2h-mt2aT5D0Teg=/0x0:2000x1125/1200x0/filters:focal(0x0:2000x1125):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/13080417/noodles_flavors_of_youth.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.5);
+}
+#menu {
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+  /* background: pink; */
+  height: 100vh;
+}
+#menu > img {
+  width: 90%;
+  max-height: 70vh;
 }

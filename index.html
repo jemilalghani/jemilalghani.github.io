@@ -8,24 +8,33 @@
       href="https://fonts.googleapis.com/css?family=Coda"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface"
+      rel="stylesheet"
+    />
     <title>おかえり</title>
   </head>
   <body>
     <section id="header">
-      <h1 class="title one">ただいま</h1>
-      <h1 class="title two">おかえり</h1>
+      <h1 class="title one">いただきます</h1>
+      <h1 class="title two">ごちごちそうさま</h1>
       <div class="inner">
         <a href="#"><img id="logo" src="./Anime Food/logo.jpg"/></a>
         <nav>
           <ul class="nav-links">
-            <li><a class="nav about" href="#">About</a></li>
+            <li><a class="nav about" href="#about">About</a></li>
+            <li><a class="nav menu" href="#menu">Menu</a></li>
             <li><a class="nav store" href="#">Store</a></li>
-            <li><a class="nav menu" href="#">Menu</a></li>
           </ul>
         </nav>
       </div>
     </section>
     <section id="home">
+      <h1 class="site">itadakimasu</h1>
       <div class="video-box ramen">
         <video id="ramen" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7587.mp4" type="video/mp4" />
@@ -41,8 +50,8 @@
           <source src="./Anime Food/IMG_7589.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box chop">
-        <video id="chop" height="300" loop autoplay>
+      <div class="video-box chop" onclick="togglePlay()">
+        <video id="chop" height="300" autoplay muted loop>
           <source src="./Anime Food/IMG_7590.mp4" type="video/mp4" />
         </video>
       </div>
@@ -61,12 +70,34 @@
           <source src="./Anime Food/IMG_7593.mp4" type="video/mp4" />
         </video>
       </div>
+      <div class="video-box pink"></div>
+      <!-- <div class="video-box yellow"></div> -->
+      <!-- <div class="video-box blue"></div> -->
     </section>
+    <section id="about">
+      <div class="about-box">
+        <h1 class="titleAbout">ABOUT</h1>
+        <p>
+          沿択ヲカレ論込ゃたぱの時基ドょフリ首教タシ新覚ヤネヌハ中幌せこさむ早側済ミ確能ヨ作首ナヌ場窃囲サ楽校ばさ逃価るさわ文全ライムク里詳又娠っぽゆご。虎イ押済覆リホヲヒ生無貸く歳展し組要陥ラヒリ五年でて安92補ニアヤ年討ょッ愛天ぶほスこ中考ぼト野容任なラびく豊係へにせし欺近ヘフワ体84資景世両ぱへじゃ。手ケチモソ定細しべ能較買遣キオソ実地もづ寄強げれぎ不台ほしお政97僕51僕5部ょぜうリ代算聴遊地フ。
+          護ナサ残6職ゅ躍供ヒハ閑7規ノイ聞龍こせ熱画ぜとけ核枚モロシ舵問ユエカサ駆保カオリ女外ねけ了原エユ河江堀フサ全歓6入ょうス霊漠ヒ長調浦絶そぶン。側劇ワ語宅ぎほ訴6孤的ヒナルサ掲潮ソコ領獲オハ天国ぐはの質熱ナチタス要先どじ沿断量ちーば卒本み打号数のじれ訃浦てッ。
+        </p>
+        <p>Images used for educational purposes</p>
+      </div>
+      <div class="grid"></div>
+    </section>
+    <section id="menu">
+      <img src="./Anime Food/food-menu.svg" />
+    </section>
+
     <script src="scroll.js"></script>
     <script>
-      window.addEventListener("resize", myFunction);
-      function myFunction() {
-        // console.log(window.innerWidth, window.innerHeight);
+      // window.addEventListener("resize", myFunction);
+      // function myFunction() {
+      //   // console.log(window.innerWidth, window.innerHeight);
+      // }
+      let myAudio = document.getElementById("chop");
+      function togglePlay() {
+        myAudio.muted = !myAudio.muted;
       }
     </script>
   </body>
