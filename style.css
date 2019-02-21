@@ -6,7 +6,7 @@ body {
 }
 #header {
   background: rgba(255, 255, 255, 0.377);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
@@ -70,11 +70,12 @@ body {
   transform: translateX(-50%);
   border: rgba(128, 128, 128, 0.068) 1px solid;
   transition: margin 0.5s;
+  background: rgba(128, 128, 128, 0.068);
 }
 .ramen {
   height: 200px;
   width: 500px;
-  top: 70px;
+  top: 50px;
   left: 30%;
   z-index: 2;
   filter: saturate(2);
@@ -82,7 +83,7 @@ body {
 .egg {
   height: 190px;
   width: 350px;
-  top: 50px;
+  top: 30px;
   left: 75%;
   z-index: 3;
   filter: grayscale(300) saturate(3);
@@ -90,7 +91,7 @@ body {
 .fish {
   width: 300px;
   height: 300px;
-  top: -220px;
+  top: -240px;
   left: 50%;
   filter: grayscale(200) saturate(2);
   z-index: 4;
@@ -99,7 +100,7 @@ body {
   height: 300px;
   width: 500px;
   left: 50%;
-  top: -685px;
+  top: -705px;
   z-index: 2;
   filter: saturate(1.5);
 }
@@ -115,7 +116,7 @@ body {
   width: 400px;
   height: 280px;
   background: rgba(232, 196, 87);
-  top: -1480px;
+  top: -1500px;
   left: 29%;
   filter: saturate(1.3);
 }
@@ -142,11 +143,11 @@ body {
   font-size: 50px;
   letter-spacing: 10px;
   color: white;
-  text-shadow: 0 0 10px rgba(44, 44, 44, 0.5);
+  /* text-shadow: 0 0 10px rgba(44, 44, 44, 0.5); */
   /* color: rgb(247, 192, 177); */
 }
 .cup {
-  top: -1230px;
+  top: -1250px;
   left: 27%;
   z-index: 3;
   width: 300px;
@@ -154,7 +155,7 @@ body {
   filter: grayscale(200) saturate(2);
 }
 .takoyaki {
-  top: -1150px;
+  top: -1170px;
   width: 400px;
   height: 300px;
   left: 75%;
@@ -172,7 +173,8 @@ video {
 }
 #home {
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
+  padding-top: 150px;
   /* height: calc(100vh - 40px); */
   /* max-height: calc(100vh - 40px); */
   overflow: hidden;
@@ -185,7 +187,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: blue; */
+  background: blue;
   padding-top: 125px;
 }
 .about-box {
@@ -218,4 +220,117 @@ video {
 #menu > img {
   width: 90%;
   max-height: 70vh;
+}
+#cart-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 8;
+}
+#cart {
+  width: 35px;
+  border: black solid 1px;
+  border-radius: 2px;
+  padding: 5px;
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+}
+#active-cart {
+  width: 165px;
+  min-height: 300px;
+  /* background: rgba(255, 255, 255, 0.459); */
+  background: rgba(230, 230, 250, 0.534);
+  border: solid 1px rgba(255, 255, 255, 0.459);
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  border-radius: 2px;
+  display: none;
+}
+#active-cart:hover {
+  display: inherit;
+}
+#store {
+  max-width: 88%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* background: blueviolet; */
+  justify-content: center;
+  padding-top: 120px;
+  /* margin-bottom: 50px; */
+}
+.store-image {
+  height: 200px;
+  transition: height 0.3s ease-in-out;
+  border-radius: 2px;
+}
+.store-image:hover {
+  height: 220px;
+  transition: height 0.3s ease-in-out;
+}
+.store-items {
+  display: flex;
+  width: 250px;
+  height: 200px;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.store-info {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.force-size {
+  border-radius: 2.5px;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 8px black;
+  cursor: pointer;
+  border: rgba(128, 128, 128, 0.014) solid 0.5px;
+}
+.plus-icon {
+  z-index: 5;
+  width: 20px;
+  position: absolute;
+  /* top: 100px; */
+  /* right: 80%; */
+  filter: invert(100);
+  display: none;
+}
+#popup {
+  position: fixed;
+  top: 38%;
+  left: 50%;
+  background: rgba(234, 211, 187, 0.856);
+  width: 300px;
+  height: 300px;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: none;
+  border-radius: 3px;
+  border: solid 1px rgba(234, 211, 187, 0.911);
+  display: flex;
+  flex-direction: row-reverse;
+}
+#X {
+  position: absolute;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+}
+#item-image {
+  width: 150px;
+}
+.flex-x {
+  width: 100%;
+  display: flex;
 }

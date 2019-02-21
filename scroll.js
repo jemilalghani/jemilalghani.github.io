@@ -1,8 +1,6 @@
-let movement = 0;
 window.onscroll = function() {
-  movement += 1;
   header();
-  body(movement);
+  item();
 };
 
 function header() {
@@ -28,12 +26,84 @@ function header() {
     }
   }
 }
-function body(x) {
-  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-    let videos = document.getElementsByClassName("video-box");
-    for (let i = 0; i < videos.length; i++) {
-      console.log(i, videos[i].offsetTop);
+function item() {
+  const add = "./Anime Food/add-button-inside-black-circle.svg";
+  const one = "./Anime Food/a.png";
+  const two = "./Anime Food/b.png";
+  const three = "./Anime Food/c.png";
+  const four = "./Anime Food/d.png";
+  const five = "./Anime Food/e.png";
+  const six = "./Anime Food/f.png";
+  const seven = "./Anime Food/i.png";
+  const eight = "./Anime Food/n.png";
+  const nine = "./Anime Food/h.png";
+  const ten = "./Anime Food/o.png";
+  const eleven = "./Anime Food/p.png";
+  const twelve = "./Anime Food/q.png";
+  let store = [
+    { id: 1, image: one, name: "オムライス", cost: "$20" },
+    { id: 2, image: two, name: "ラーメン", cost: "$15" },
+    { id: 3, image: three, name: "べんと", cost: "$10" },
+    { id: 4, image: four, name: "アイスクリーム", cost: "$5" },
+    { id: 5, image: five, name: "鯖の塩焼きべんと", cost: "$8" },
+    { id: 6, image: six, name: "ラーメン", cost: "$15" },
+    { id: 7, image: seven, name: "ラーメン", cost: "$15" },
+    { id: 8, image: eight, name: "鯖の塩焼き", cost: "$10" },
+    { id: 9, image: nine, name: "べんと", cost: "$10" },
+    { id: 10, image: ten, name: "お茶", cost: "$2" },
+    { id: 11, image: eleven, name: "握り", cost: "$10" },
+    { id: 12, image: twelve, name: "Assorted Bread", cost: "$2" }
+  ];
+  let parent = document.getElementById("store");
+  // console.log(parent.innerHTML.length);
+  if (parent.innerHTML.length == 0) {
+    for (let i = 0; i < store.length; i++) {
+      let totalbox = document.createElement("div");
+      let text = document.createElement("div");
+      let name = document.createElement("p");
+      let cost = document.createElement("p");
+      let item = document.createElement("img");
+      let plus = document.createElement("img");
+      let box = document.createElement("div");
+      plus.className = "plus-icon";
+      box.className = "force-size";
+      item.className = "store-image";
+      totalbox.className = "store-items";
+      text.className = "store-info";
+      text.append(name, cost);
+      item.setAttribute("src", store[i].image);
+      plus.setAttribute("src", add);
+      name.append(store[i].name);
+      cost.append(store[i].cost);
+      box.append(item, plus);
+      box.onclick = function() {
+        let escape = document.getElementById("popup");
+        escape.style["display"] = "flex";
+        let populate = document.getElementById("item-cost");
+        let populateName = document.getElementById("item-name");
+        let populateImage = document.getElementById("item-image");
+        // console.log(populate.hasChildNodes());
+        if (populate.hasChildNodes()) {
+          populate.removeChild(populate.childNodes[0]);
+          populate.append(store[i].cost);
+        } else {
+          populate.append(store[i].cost);
+        }
+        if (populateImage.hasChildNodes()) {
+          populateImage.removeChild(populateImage.childNodes[0]);
+          populateImage.setAttribute("src", store[i].image);
+        } else {
+          populateImage.setAttribute("src", store[i].image);
+        }
+        if (populateName.hasChildNodes()) {
+          populateName.removeChild(populateName.childNodes[0]);
+          populateName.append(store[i].name);
+        } else {
+          populateName.append(store[i].name);
+        }
+      };
+      totalbox.append(box, text);
+      parent.append(totalbox);
     }
-  } else {
   }
 }

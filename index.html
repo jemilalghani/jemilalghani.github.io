@@ -28,7 +28,9 @@
           <ul class="nav-links">
             <li><a class="nav about" href="#about">About</a></li>
             <li><a class="nav menu" href="#menu">Menu</a></li>
-            <li><a class="nav store" href="#">Store</a></li>
+            <li onclick="item()">
+              <a class="nav store" href="#store">Store</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -42,7 +44,7 @@
       </div>
       <div class="video-box egg">
         <video id="egg" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7588.mp4" type="video/mp4" />
+          <source src="./Anime Food/IMG_7617.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="video-box fish">
@@ -52,7 +54,7 @@
       </div>
       <div class="video-box chop" onclick="togglePlay()">
         <video id="chop" height="300" autoplay muted loop>
-          <source src="./Anime Food/IMG_7590.mp4" type="video/mp4" />
+          <source src="./Anime Food/IMG_7613.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="video-box bento">
@@ -67,10 +69,10 @@
       </div>
       <div class="video-box cup">
         <video id="cup" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7593.mp4" type="video/mp4" />
+          <source src="./Anime Food/IMG_7619.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box pink"></div>
+      <!-- <div class="video-box pink"></div> -->
       <!-- <div class="video-box yellow"></div> -->
       <!-- <div class="video-box blue"></div> -->
     </section>
@@ -86,10 +88,36 @@
       <div class="grid"></div>
     </section>
     <section id="menu">
-      <img src="./Anime Food/food-menu.svg" />
+      <img src="./Anime Food/menu.svg" />
+    </section>
+    <section id="store"></section>
+    <div id="popup">
+      <div id="X" onclick="esc()">X</div>
+      <div class="flex-x">
+        <div id="item-picture-box">
+          <img id="item-image" src="" />
+          <p id="item-name"></p>
+          <p id="item-cost"></p>
+        </div>
+        <div>
+          <button>+</button>
+          <p id="cart-value"></p>
+          <button>-</button>
+        </div>
+      </div>
+    </div>
+    <section id="cart-box">
+      <div id="active-cart"></div>
+      <img
+        id="cart"
+        src="./Anime Food/crossed-knife-and-fork.svg"
+        onmouseover="viewCart()"
+        onmouseout="hideCart()"
+      />
     </section>
 
     <script src="scroll.js"></script>
+    <!-- <script src="store.js"></script> -->
     <script>
       // window.addEventListener("resize", myFunction);
       // function myFunction() {
@@ -98,6 +126,17 @@
       let myAudio = document.getElementById("chop");
       function togglePlay() {
         myAudio.muted = !myAudio.muted;
+      }
+      let cart = document.getElementById("active-cart");
+      function viewCart() {
+        cart.style["display"] = "inherit";
+      }
+      function hideCart() {
+        cart.style["display"] = "none";
+      }
+      let escape = document.getElementById("popup");
+      function esc() {
+        escape.style["display"] = "none";
       }
     </script>
   </body>
