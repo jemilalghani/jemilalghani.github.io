@@ -5,24 +5,38 @@ window.onscroll = function() {
 
 function header() {
   if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-    document.getElementById("logo").className = "scroll-logo";
-    document.getElementById("logo").style.width = "100px";
+    let smallLogo = document.getElementById("logo");
+    let smallLogoOutline = document.getElementById("logo-outline");
+    smallLogo.className = "scroll-logo";
+    smallLogo.style.width = "100px";
+    smallLogoOutline.style.width = "104px";
+    smallLogoOutline.style.height = "105px";
+    smallLogoOutline.style.border = "solid 5px rgb(218, 122, 143)";
     let nav = document.getElementsByClassName("nav");
     for (let i = 0; i < nav.length; i++) {
-      nav[i].style["font-size"] = "10px";
+      nav[i].style["font-size"] = "13px";
       nav[i].style["bottom"] = "50px";
       nav[i].style["transition"] = "font-size .3s";
       nav[i].style["transition"] = "bottom 1s";
+      nav[i].style["color"] = "rgb(218, 122, 143)";
     }
   } else {
-    document.getElementById("logo").style.width = "120px";
-    document.getElementById("logo").className = "";
+    let bigLogo = document.getElementById("logo");
+    let bigLogoOutline = document.getElementById("logo-outline");
+    // bigLogo.onmouseout.style.height = "120px";
+    bigLogo.style.width = "120px";
+    bigLogo.className = "";
+    bigLogoOutline.style.width = "120px";
+    bigLogoOutline.style.height = "120px";
+    bigLogoOutline.style.border = "none";
+    bigLogoOutline.style.border = "none;";
     let nav = document.getElementsByClassName("nav");
     for (let i = 0; i < nav.length; i++) {
-      nav[i].style["font-size"] = "12px";
+      nav[i].style["font-size"] = "15px";
       nav[i].style["bottom"] = "60px";
       nav[i].style["transition"] = "font-size .3s";
       nav[i].style["transition"] = "bottom 1s";
+      nav[i].style["color"] = "white";
     }
   }
 }
@@ -66,7 +80,7 @@ function item() {
       let box = document.createElement("div");
       plus.className = "plus-icon";
       box.className = "force-size";
-      item.className = "store-image";
+      item.className = "store-image loading";
       totalbox.className = "store-items";
       text.className = "store-info";
       text.append(name, cost);

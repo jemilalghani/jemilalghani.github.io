@@ -20,21 +20,36 @@ html {
   justify-content: space-between;
 }
 #logo {
-  margin: 5px 0 0 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
   width: 120px;
   border-radius: 100%;
   transition: width 0.4s;
   transition: transform 0.5s;
-  filter: saturate(2);
+  transform: translate(-50%, -50%);
+  filter: grayscale(100) contrast(10);
+  /* transition: height 1s linear; */
+}
+#logo-outline {
+  border-radius: 100%;
+  margin: 5px 0 0 0;
+  /* background: rgb(218, 122, 143); */
+  overflow: hidden;
+  height: 119px;
+  width: 119px;
 }
 nav {
   width: 350px;
 }
-#logo:hover {
-  transition: transform 0.5s;
-  transform: rotate(360deg);
-}
+/* #logo:hover {
+  transition: height 1s linear;
+  transition: width 1s linear;
+  width: 5px;
+  height: 5px;
+} */
 .scroll-logo {
+  filter: none;
   transition: width 0.4s;
 }
 .title {
@@ -49,29 +64,39 @@ nav {
 }
 .nav {
   position: relative;
-  color: black;
-  font-weight: 500;
+  color: rgb(109, 99, 101);
+  color: white;
+  /* -webkit-text-stroke: rgb(218, 122, 143) 1px; */
+  /* -webkit-text-stroke: black 1px; */
+  font-weight: 700;
   margin: 0 10px;
   letter-spacing: 3px;
   bottom: 60px;
   transition: width 1s;
+  font-family: "Dosis", sans-serif;
+}
+#sound {
+  position: relative;
+  top: -130px;
+  left: 36px;
 }
 #about-link {
-  font-family: "Coda", cursive;
+  /* font-family: "Coda", cursive; */
   text-decoration: none;
   font-size: 12px;
 }
 #store-link {
-  font-family: "Coda", cursive;
+  /* font-family: "Coda", cursive; */
   text-decoration: none;
   font-size: 12px;
 }
 #title-link {
   text-decoration: none;
 }
-.nav:hover {
+/* .nav:hover {
   color: rgb(230, 74, 69);
-}
+  color: rgb(218, 122, 143);
+} */
 .video-box {
   overflow: hidden;
   border-radius: 5px;
@@ -84,7 +109,7 @@ nav {
   transition: margin 0.5s;
 }
 .ramen {
-  left: 20%;
+  left: 30%;
   height: 200px;
   width: 500px;
   top: 50px;
@@ -96,7 +121,7 @@ nav {
 .egg {
   height: 190px;
   width: 350px;
-  top: 20px;
+  top: 30px;
   left: 75%;
   opacity: 1;
   transition: top 1s;
@@ -115,14 +140,14 @@ nav {
   height: 300px;
   width: 500px;
   left: 50%;
-  top: -600px;
+  top: -705px;
   z-index: 2;
   transition: top 1s;
   filter: saturate(1.5);
 }
 .takoyaki {
   top: -1250px;
-  left: 37%;
+  left: 27%;
   z-index: 3;
   width: 300px;
   height: 130px;
@@ -174,8 +199,10 @@ nav {
   z-index: 5;
   font-size: 50px;
   letter-spacing: 10px;
-  color: white;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
   text-decoration: none;
+  font-family: "Righteous", cursive;
 }
 video {
   border-radius: 5px;
@@ -193,6 +220,7 @@ video {
   height: 100vh;
   padding-top: 150px;
   overflow: hidden;
+  background: rgb(211, 223, 234);
 }
 #about {
   width: 100%;
@@ -253,6 +281,7 @@ video {
   border-radius: 2px;
   display: none;
   text-align: end;
+  /* background: brown; */
   /* transform: translateX(-200); */
 }
 .addingItem {
@@ -293,10 +322,11 @@ video {
   justify-content: space-between;
 }
 .force-size {
-  border-radius: 2.5px;
+  border-radius: 4px;
   z-index: 2;
   width: 150px;
   height: 150px;
+  /* border-radius: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -431,9 +461,27 @@ input:hover {
   margin: 5px 0 10px 0;
 }
 #active-cart > h1 {
+  font-size: 25px;
+  color: navy;
+  letter-spacing: 1px;
+  margin: 0 10px 10px 0;
+  text-decoration: underline rgb(218, 122, 143);
   font-family: "Satisfy", cursive;
 }
 #item-cost {
   text-align: center;
   margin-top: 10px;
+}
+.outDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+.remove-icon {
+  margin: 0 0 0 5px;
+  height: 10px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.outDiv:hover {
+  color: rgba(230, 78, 61);
 }

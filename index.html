@@ -62,6 +62,14 @@
       href="https://fonts.googleapis.com/css?family=Dancing+Script|Felipa|Miss+Fajardose|Satisfy"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:800"
+      rel="stylesheet"
+    />
     <title>おかえり</title>
   </head>
   <body>
@@ -69,14 +77,16 @@
       <!-- <h1 class="title one">いただきます</h1>
       <h1 class="title two">ごちごちそうさま</h1> -->
       <div class="inner">
-        <a href="#"><img id="logo" src="./Anime Food/logo.jpg"/></a>
+        <a href="#" id="logo-outline"
+          ><img id="logo" src="./Anime Food/logo.jpg"
+        /></a>
         <nav>
           <ul class="nav-links">
             <li>
-              <a class="nav about" id="about-link" href="#about">About</a>
+              <a class="nav about" id="about-link" href="#about">ABOUT</a>
             </li>
             <li onclick="item()">
-              <a class="nav store" id="store-link" href="#store">Store</a>
+              <a class="nav store" id="store-link" href="#store">STORE</a>
             </li>
           </ul>
         </nav>
@@ -86,39 +96,68 @@
       <a id="title-link" href="#about"><h1 class="site">itadakimasu</h1></a>
       <div class="video-box ramen" id="ramen">
         <video height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7587.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7587.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div class="video-box egg" id="egg">
         <video id="egg" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7617.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7617.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div class="video-box fish" id="fish">
         <video id="fish" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7589.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7589.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div class="video-box chop" onclick="togglePlay()" id="chop">
+        <img src="Anime Food/speaker (1).svg" width="20px" id="sound" />
         <video id="chopsound" height="300" autoplay muted loop>
-          <source src="./Anime Food/IMG_7613.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7613.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <!-- not displayed -->
       <div class="video-box bento">
         <video id="bento" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7591.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7591.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <!--  -->
       <div class="video-box cup" id="cup">
         <video id="cup" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7592.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7592.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div class="video-box takoyaki" id="takoyaki">
         <video id="takoyaki" height="300" loop autoplay muted>
-          <source src="./Anime Food/IMG_7619.mp4" type="video/mp4" />
+          <source
+            class="loading"
+            src="./Anime Food/IMG_7619.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <!-- <div class="video-box pink"></div> -->
@@ -134,7 +173,7 @@
         </p>
         <p>Images used for educational purposes</p>
       </div>
-      <div class="grid"></div>
+      <div class="grid loading"></div>
     </section>
     <!-- <section id="menu"> -->
     <!-- <img src="./Anime Food/menu.svg" /> -->
@@ -195,23 +234,31 @@
     <script src="scroll.js"></script>
     <script>
       window.onload = function() {
-        let imageOne = document.getElementById("ramen");
-        let imageTwo = document.getElementById("egg");
-        let imageThree = document.getElementById("chop");
-        let imageFour = document.getElementById("takoyaki");
-        let imageSix = document.getElementById("fish");
-        imageOne.style["left"] = "30%";
-        imageTwo.style["top"] = "30px";
-        imageThree.style["top"] = "-705px";
-        imageFour.style["left"] = "27%";
+        let array = Array.from(document.getElementsByClassName("loading"));
+        let load = document.getElementsByClassName("loading");
+        console.log(
+          array.map(el => {
+            return el.src;
+          })
+        );
+        for (let p = 0; p < load.length; p++) {
+          console.log(load[p].attributes);
+        }
       };
       let myAudio = document.getElementById("chopsound");
       function togglePlay() {
+        let audioOn = "Anime Food/speaker.svg";
+        let audioOff = "Anime Food/speaker (1).svg";
+        let audio = document.getElementById("sound");
+        audio.getAttribute("src") == audioOff
+          ? audio.setAttribute("src", audioOn)
+          : audio.setAttribute("src", audioOff);
         myAudio.muted = !myAudio.muted;
       }
       let cart = document.getElementById("active-cart");
       function checkCart() {
         let display = cart.style["display"];
+        console.log(display);
         if (display) {
           if (display === "none") viewCart();
           if (display === "inherit") hideCart();
@@ -230,6 +277,11 @@
         let price = document.getElementById("item-cost").innerHTML;
         let initAmount = document.getElementById("cart-value").innerHTML;
         let bag = document.getElementById("active-cart");
+        let remove = document.createElement("img");
+        let removeIcon = "./Anime Food/add-button-inside-black-circle.svg";
+        remove.setAttribute("src", removeIcon);
+        remove.className = "remove-icon";
+        remove.onclick = () => removeFromCart();
         let outdiv = document.createElement("div");
         outdiv.className = "outDiv";
         let outer = document.getElementsByClassName("outDiv");
@@ -242,14 +294,14 @@
           : item.append(name + " " + "$" + price.slice(1));
 
         setTimeout(() => {
-          editOrAdd(item, outdiv, amount, outer, bag);
+          editOrAdd(item, outdiv, amount, outer, bag, remove);
           esc();
         }, 800);
         setTimeout(() => {
           document.getElementById("addToCart").value = "Add To Cart";
         }, 802);
       }
-      function editOrAdd(item, bag, amount, outer, last) {
+      function editOrAdd(item, bag, amount, outer, last, icon) {
         let check = document.getElementsByClassName("addingItem");
         if (check.length) {
           check = Array.from(check);
@@ -261,7 +313,7 @@
           });
           if (newArray.indexOf(resulttwo) == -1) {
             last.append(bag);
-            bag.append(item);
+            bag.append(item, icon);
           } else {
             for (let i = 0; i < check.length; i++) {
               let innerText = check[i].innerHTML.indexOf("$");
@@ -290,16 +342,21 @@
                 let k = item.innerHTML.indexOf("X");
                 if (amount > 5) amount = 5;
                 outer[index].removeChild(outer[index].childNodes[0]);
+                outer[index].removeChild(outer[index].childNodes[0]);
                 item.innerHTML = item.innerHTML.slice(0, k) + "X" + amount;
-                outer[index].append(item);
+                outer[index].append(item, icon);
                 break;
               }
             }
           }
         } else {
           last.append(bag);
-          bag.append(item);
+          bag.append(item, icon);
         }
+      }
+      function removeFromCart() {
+        let parent = document.getElementById("active-cart");
+        parent.removeChild(window.event.target.parentNode);
       }
       function esc() {
         document.getElementById("cart-value").innerHTML = 1;
