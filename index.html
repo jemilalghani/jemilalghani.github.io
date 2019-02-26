@@ -223,6 +223,10 @@
     <section id="cart-box">
       <div id="active-cart">
         <h1>Cart</h1>
+        <div id="total">
+          <p>Total:</p>
+          <p id="totalCost">$0</p>
+        </div>
       </div>
       <img
         id="cart"
@@ -258,7 +262,6 @@
       let cart = document.getElementById("active-cart");
       function checkCart() {
         let display = cart.style["display"];
-        console.log(display);
         if (display) {
           if (display === "none") viewCart();
           if (display === "inherit") hideCart();
@@ -271,6 +274,31 @@
       }
       function hideCart() {
         cart.style["display"] = "none";
+      }
+      function calcTotal() {
+        let listOfCart = document.getElementsByClassName("addingItem");
+        listOfCart = Array.from(listOfCart);
+        let arrOfCart = listOfCart.map(el => {
+          let h = el.innerHTML.indexOf("$");
+          let he = el.innerHTML.slice(h + 1);
+          if (he.indexOf("X") === -1) {
+            return parseInt(he);
+          } else {
+            let l = he.indexOf("X");
+            let a = he.slice(0, l);
+            let b = he.slice(l + 1);
+            return parseInt(a) * parseInt(b);
+          }
+        });
+        let total = document.getElementById("totalCost");
+
+        arrOfCart.length
+          ? (total.innerHTML =
+              "$" +
+              arrOfCart.reduce((acc, curr) => {
+                return acc + curr;
+              }))
+          : (total.innerHTML = "$0");
       }
       function addToCart() {
         let name = document.getElementById("item-name").innerHTML;
@@ -295,6 +323,7 @@
 
         setTimeout(() => {
           editOrAdd(item, outdiv, amount, outer, bag, remove);
+          calcTotal();
           esc();
         }, 800);
         setTimeout(() => {
@@ -357,6 +386,7 @@
       function removeFromCart() {
         let parent = document.getElementById("active-cart");
         parent.removeChild(window.event.target.parentNode);
+        calcTotal();
       }
       function esc() {
         document.getElementById("cart-value").innerHTML = 1;

@@ -485,3 +485,15 @@ input:hover {
 .outDiv:hover {
   color: rgba(230, 78, 61);
 }
+#total {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  display: flex;
+  font-family: "Satisfy", cursive;
+  font-size: 14px;
+  font-weight: 600;
+}
+#totalCost {
+  margin: 0 0 0 5px;
+}
