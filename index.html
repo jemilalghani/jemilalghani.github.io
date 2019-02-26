@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./reset.css" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
@@ -16,59 +58,66 @@
       href="https://fonts.googleapis.com/css?family=Abril+Fatface"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script|Felipa|Miss+Fajardose|Satisfy"
+      rel="stylesheet"
+    />
     <title>おかえり</title>
   </head>
   <body>
     <section id="header">
-      <h1 class="title one">いただきます</h1>
-      <h1 class="title two">ごちごちそうさま</h1>
+      <!-- <h1 class="title one">いただきます</h1>
+      <h1 class="title two">ごちごちそうさま</h1> -->
       <div class="inner">
         <a href="#"><img id="logo" src="./Anime Food/logo.jpg"/></a>
         <nav>
           <ul class="nav-links">
-            <li><a class="nav about" href="#about">About</a></li>
-            <li><a class="nav menu" href="#menu">Menu</a></li>
+            <li>
+              <a class="nav about" id="about-link" href="#about">About</a>
+            </li>
             <li onclick="item()">
-              <a class="nav store" href="#store">Store</a>
+              <a class="nav store" id="store-link" href="#store">Store</a>
             </li>
           </ul>
         </nav>
       </div>
     </section>
     <section id="home">
-      <h1 class="site">itadakimasu</h1>
-      <div class="video-box ramen">
-        <video id="ramen" height="300" loop autoplay muted>
+      <a id="title-link" href="#about"><h1 class="site">itadakimasu</h1></a>
+      <div class="video-box ramen" id="ramen">
+        <video height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7587.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box egg">
+      <div class="video-box egg" id="egg">
         <video id="egg" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7617.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box fish">
+      <div class="video-box fish" id="fish">
         <video id="fish" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7589.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box chop" onclick="togglePlay()">
-        <video id="chop" height="300" autoplay muted loop>
+      <div class="video-box chop" onclick="togglePlay()" id="chop">
+        <video id="chopsound" height="300" autoplay muted loop>
           <source src="./Anime Food/IMG_7613.mp4" type="video/mp4" />
         </video>
       </div>
+      <!-- not displayed -->
       <div class="video-box bento">
         <video id="bento" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7591.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box takoyaki">
-        <video id="takoyaki" height="300" loop autoplay muted>
+      <!--  -->
+      <div class="video-box cup" id="cup">
+        <video id="cup" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7592.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box cup">
-        <video id="cup" height="300" loop autoplay muted>
+      <div class="video-box takoyaki" id="takoyaki">
+        <video id="takoyaki" height="300" loop autoplay muted>
           <source src="./Anime Food/IMG_7619.mp4" type="video/mp4" />
         </video>
       </div>
@@ -87,56 +136,193 @@
       </div>
       <div class="grid"></div>
     </section>
-    <section id="menu">
-      <img src="./Anime Food/menu.svg" />
-    </section>
+    <!-- <section id="menu"> -->
+    <!-- <img src="./Anime Food/menu.svg" /> -->
+    <!-- <div class="outline">
+        <p>Check out our IG for menu details</p>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png"
+          width="40px"
+        />
+      </div> -->
+    <!-- </section> -->
     <section id="store"></section>
-    <div id="popup">
-      <div id="X" onclick="esc()">X</div>
-      <div class="flex-x">
-        <div id="item-picture-box">
-          <img id="item-image" src="" />
-          <p id="item-name"></p>
-          <p id="item-cost"></p>
-        </div>
-        <div>
-          <button>+</button>
-          <p id="cart-value"></p>
-          <button>-</button>
+    <div id="background">
+      <div id="background-esc" onclick="esc()"></div>
+      <div id="popup">
+        <!-- <div id="X" onclick="esc()">X</div> -->
+        <img
+          src="./Anime Food/add-button-inside-black-circle.svg"
+          onclick="esc()"
+          id="X"
+        />
+        <div class="flex-x">
+          <div id="item-picture-box">
+            <div>
+              <img id="item-image" src="" />
+            </div>
+            <p id="item-name"></p>
+            <p id="item-des">
+              作ウヘネヒ訳合クキ計演テウ堀歩トシテ刈場領リるぶけ笑展モ護別新韓ユラレ転街お野応ワカテエ義市をひぞせ覚俣妃巳惧きんて。
+            </p>
+            <p id="item-cost"></p>
+          </div>
+          <div class="amount">
+            <button onclick="subtract()">-</button>
+            <p id="cart-value">1</p>
+            <button onclick="add()">+</button>
+          </div>
+          <input
+            id="addToCart"
+            type="button"
+            value="Add to Cart"
+            onclick="addToCart()"
+          />
         </div>
       </div>
     </div>
     <section id="cart-box">
-      <div id="active-cart"></div>
+      <div id="active-cart">
+        <h1>Cart</h1>
+      </div>
       <img
         id="cart"
         src="./Anime Food/crossed-knife-and-fork.svg"
-        onmouseover="viewCart()"
-        onmouseout="hideCart()"
+        onclick="checkCart()"
       />
     </section>
 
     <script src="scroll.js"></script>
-    <!-- <script src="store.js"></script> -->
     <script>
-      // window.addEventListener("resize", myFunction);
-      // function myFunction() {
-      //   // console.log(window.innerWidth, window.innerHeight);
-      // }
-      let myAudio = document.getElementById("chop");
+      window.onload = function() {
+        let imageOne = document.getElementById("ramen");
+        let imageTwo = document.getElementById("egg");
+        let imageThree = document.getElementById("chop");
+        let imageFour = document.getElementById("takoyaki");
+        let imageSix = document.getElementById("fish");
+        imageOne.style["left"] = "30%";
+        imageTwo.style["top"] = "30px";
+        imageThree.style["top"] = "-705px";
+        imageFour.style["left"] = "27%";
+      };
+      let myAudio = document.getElementById("chopsound");
       function togglePlay() {
         myAudio.muted = !myAudio.muted;
       }
       let cart = document.getElementById("active-cart");
+      function checkCart() {
+        let display = cart.style["display"];
+        if (display) {
+          if (display === "none") viewCart();
+          if (display === "inherit") hideCart();
+        } else {
+          viewCart();
+        }
+      }
       function viewCart() {
         cart.style["display"] = "inherit";
       }
       function hideCart() {
         cart.style["display"] = "none";
       }
-      let escape = document.getElementById("popup");
+      function addToCart() {
+        let name = document.getElementById("item-name").innerHTML;
+        let price = document.getElementById("item-cost").innerHTML;
+        let initAmount = document.getElementById("cart-value").innerHTML;
+        let bag = document.getElementById("active-cart");
+        let outdiv = document.createElement("div");
+        outdiv.className = "outDiv";
+        let outer = document.getElementsByClassName("outDiv");
+        let item = document.createElement("div");
+        item.className = "addingItem";
+        document.getElementById("addToCart").value = "✔";
+        let amount = initAmount;
+        amount > 1
+          ? item.append(name + " " + "$" + price.slice(1) + "X" + amount)
+          : item.append(name + " " + "$" + price.slice(1));
+
+        setTimeout(() => {
+          editOrAdd(item, outdiv, amount, outer, bag);
+          esc();
+        }, 800);
+        setTimeout(() => {
+          document.getElementById("addToCart").value = "Add To Cart";
+        }, 802);
+      }
+      function editOrAdd(item, bag, amount, outer, last) {
+        let check = document.getElementsByClassName("addingItem");
+        if (check.length) {
+          check = Array.from(check);
+          let texttwo = item.innerHTML.indexOf("$");
+          let resulttwo = item.innerHTML.slice(0, texttwo);
+          let newArray = check.map(el => {
+            let text = el.innerHTML.indexOf("$");
+            return el.innerHTML.slice(0, text);
+          });
+          if (newArray.indexOf(resulttwo) == -1) {
+            last.append(bag);
+            bag.append(item);
+          } else {
+            for (let i = 0; i < check.length; i++) {
+              let innerText = check[i].innerHTML.indexOf("$");
+              if (
+                check[i].innerHTML.slice(0, innerText) ==
+                item.innerHTML.slice(0, innerText)
+              ) {
+                newouter = Array.from(outer);
+
+                let newThing = newouter.map(val => {
+                  let dollarSign = val.outerText.indexOf("$");
+                  return val.outerText.slice(0, dollarSign);
+                });
+                let thing = item.innerHTML.slice(0, innerText);
+                let index = newThing.indexOf(thing);
+                if (outer[index].innerText.indexOf("X") == -1) {
+                  amount++;
+                } else {
+                  amount =
+                    parseInt(
+                      outer[index].innerText.slice(
+                        outer[index].innerText.indexOf("X") + 1
+                      )
+                    ) + parseInt(amount);
+                }
+                let k = item.innerHTML.indexOf("X");
+                if (amount > 5) amount = 5;
+                outer[index].removeChild(outer[index].childNodes[0]);
+                item.innerHTML = item.innerHTML.slice(0, k) + "X" + amount;
+                outer[index].append(item);
+                break;
+              }
+            }
+          }
+        } else {
+          last.append(bag);
+          bag.append(item);
+        }
+      }
       function esc() {
+        document.getElementById("cart-value").innerHTML = 1;
+        let escape = document.getElementById("popup");
+        let back = document.getElementById("background");
         escape.style["display"] = "none";
+        back.style["display"] = "none";
+      }
+      function add() {
+        let number = document.getElementById("cart-value");
+        addvalue = number.innerHTML;
+        if (addvalue < 5) {
+          addvalue++;
+          number.innerHTML = addvalue;
+        }
+      }
+      function subtract() {
+        let number = document.getElementById("cart-value");
+        subtractvalue = number.innerHTML;
+        if (subtractvalue > 1) {
+          subtractvalue--;
+          number.innerHTML = subtractvalue;
+        }
       }
     </script>
   </body>

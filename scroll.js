@@ -10,19 +10,19 @@ function header() {
     let nav = document.getElementsByClassName("nav");
     for (let i = 0; i < nav.length; i++) {
       nav[i].style["font-size"] = "10px";
-      nav[i].style["bottom"] = "25px";
+      nav[i].style["bottom"] = "50px";
       nav[i].style["transition"] = "font-size .3s";
-      nav[i].style["transition"] = "bottom .3s";
+      nav[i].style["transition"] = "bottom 1s";
     }
   } else {
-    document.getElementById("logo").style.width = "150px";
+    document.getElementById("logo").style.width = "120px";
     document.getElementById("logo").className = "";
     let nav = document.getElementsByClassName("nav");
     for (let i = 0; i < nav.length; i++) {
-      nav[i].style["font-size"] = "15px";
-      nav[i].style["bottom"] = "28px";
+      nav[i].style["font-size"] = "12px";
+      nav[i].style["bottom"] = "60px";
       nav[i].style["transition"] = "font-size .3s";
-      nav[i].style["transition"] = "bottom .3s";
+      nav[i].style["transition"] = "bottom 1s";
     }
   }
 }
@@ -42,20 +42,19 @@ function item() {
   const twelve = "./Anime Food/q.png";
   let store = [
     { id: 1, image: one, name: "オムライス", cost: "$20" },
-    { id: 2, image: two, name: "ラーメン", cost: "$15" },
-    { id: 3, image: three, name: "べんと", cost: "$10" },
+    { id: 2, image: two, name: "ラーメン A", cost: "$15" },
+    { id: 3, image: three, name: "弁当 C", cost: "$10" },
     { id: 4, image: four, name: "アイスクリーム", cost: "$5" },
-    { id: 5, image: five, name: "鯖の塩焼きべんと", cost: "$8" },
-    { id: 6, image: six, name: "ラーメン", cost: "$15" },
-    { id: 7, image: seven, name: "ラーメン", cost: "$15" },
+    { id: 5, image: five, name: "弁当 A", cost: "$8" },
+    { id: 6, image: six, name: "ラーメン B", cost: "$15" },
+    { id: 7, image: seven, name: "ラーメン C", cost: "$15" },
     { id: 8, image: eight, name: "鯖の塩焼き", cost: "$10" },
-    { id: 9, image: nine, name: "べんと", cost: "$10" },
+    { id: 9, image: nine, name: "弁当 B", cost: "$10" },
     { id: 10, image: ten, name: "お茶", cost: "$2" },
-    { id: 11, image: eleven, name: "握り", cost: "$10" },
+    { id: 11, image: eleven, name: "握り寿司", cost: "$10" },
     { id: 12, image: twelve, name: "Assorted Bread", cost: "$2" }
   ];
   let parent = document.getElementById("store");
-  // console.log(parent.innerHTML.length);
   if (parent.innerHTML.length == 0) {
     for (let i = 0; i < store.length; i++) {
       let totalbox = document.createElement("div");
@@ -77,8 +76,11 @@ function item() {
       cost.append(store[i].cost);
       box.append(item, plus);
       box.onclick = function() {
+        document.getElementById("active-cart").style["display"] = "inherit";
         let escape = document.getElementById("popup");
         escape.style["display"] = "flex";
+        let backdrop = document.getElementById("background");
+        backdrop.style["display"] = "inherit";
         let populate = document.getElementById("item-cost");
         let populateName = document.getElementById("item-name");
         let populateImage = document.getElementById("item-image");
