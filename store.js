@@ -4,16 +4,32 @@ window.onload = function() {
     loadinggif[i].style["visibility"] = "visible";
   }
   document.getElementById("gif").style.visibility = "hidden";
-  // let array = Array.from(document.getElementsByClassName("loading"));
-  // let load = document.getElementsByClassName("loading");
-  // console.log(
-  //   array.map(el => {
-  //     return el.src;
-  //   })
-  // );
-  // for (let p = 0; p < load.length; p++) {
-  //   console.log(load[p].attributes);
-  // }
+  let array = Array.from(document.getElementsByClassName("loading"));
+  let load = document.getElementsByClassName("loading");
+  let newImgSrc = [
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/j.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/a.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/b.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/c.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/d.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/e.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/f.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/i.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/n.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/h.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/o.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/p.png",
+    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/q.png"
+  ];
+  item();
+  console.log(
+    array.map(el => {
+      return el.src;
+    })
+  );
+  for (let p = 0; p < load.length; p++) {
+    load[p].setAttribute("src", newImgSrc[p]);
+  }
 };
 let myAudio = document.getElementById("chopsound");
 function togglePlay() {
