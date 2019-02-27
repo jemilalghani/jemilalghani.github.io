@@ -96,10 +96,10 @@ function editOrAdd(item, bag, amount, outer, last, icon) {
   if (check.length) {
     check = Array.from(check);
     let texttwo = item.innerHTML.indexOf("$");
-    let resulttwo = item.innerHTML.slice(0, texttwo);
+    let resulttwo = item.innerHTML.slice(0, texttwo + 1);
     let newArray = check.map(el => {
       let text = el.innerHTML.indexOf("$");
-      return el.innerHTML.slice(0, text);
+      return el.innerHTML.slice(0, text + 1);
     });
     if (newArray.indexOf(resulttwo) == -1) {
       last.append(bag);
@@ -133,7 +133,9 @@ function editOrAdd(item, bag, amount, outer, last, icon) {
           if (amount > 5) amount = 5;
           outer[index].removeChild(outer[index].childNodes[0]);
           outer[index].removeChild(outer[index].childNodes[0]);
-          item.innerHTML = item.innerHTML.slice(0, k) + "X" + amount;
+          k !== -1
+            ? (item.innerHTML = item.innerHTML.slice(0, k) + "X" + amount)
+            : (item.innerHTML = item.innerHTML + "X" + amount);
           outer[index].append(item, icon);
           break;
         }
