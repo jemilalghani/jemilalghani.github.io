@@ -79,6 +79,7 @@ nav {
   position: relative;
   top: -130px;
   left: 36px;
+  cursor: pointer;
 }
 #about-link {
   /* font-family: "Coda", cursive; */
@@ -144,6 +145,7 @@ nav {
   z-index: 2;
   transition: top 1s;
   filter: saturate(1.5);
+  cursor: pointer;
 }
 .takoyaki {
   top: -1250px;
@@ -268,6 +270,7 @@ video {
   position: fixed;
   right: 40px;
   bottom: 20px;
+  cursor: pointer;
 }
 #active-cart {
   min-width: 165px;
@@ -320,6 +323,10 @@ video {
   width: 150px;
   display: flex;
   justify-content: space-between;
+}
+.store-info > p {
+  /* color: blue; */
+  font-weight: 500;
 }
 .force-size {
   border-radius: 4px;
