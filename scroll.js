@@ -41,20 +41,32 @@ function header() {
 }
 function item() {
   const add = "./Anime Food/add-button-inside-black-circle.svg";
-  const one = "Anime Food/yellowsushi.gif";
+  // const one = "Anime Food/yellowsushi.gif";
+  const oneB = "./Anime Food/a.png";
+  const two = "./Anime Food/b.png";
+  const three = "./Anime Food/c.png";
+  const four = "./Anime Food/d.png";
+  const five = "./Anime Food/e.png";
+  const six = "./Anime Food/f.png";
+  const seven = "./Anime Food/i.png";
+  const eight = "./Anime Food/n.png";
+  const nine = "./Anime Food/h.png";
+  const ten = "./Anime Food/o.png";
+  const eleven = "./Anime Food/p.png";
+  const twelve = "./Anime Food/q.png";
   let store = [
-    { id: 1, image: one, name: "オムライス", cost: "$20" },
-    { id: 2, image: one, name: "ラーメン A", cost: "$15" },
-    { id: 3, image: one, name: "弁当 C", cost: "$10" },
-    { id: 4, image: one, name: "アイスクリーム", cost: "$5" },
-    { id: 5, image: one, name: "弁当 A", cost: "$8" },
-    { id: 6, image: one, name: "ラーメン B", cost: "$15" },
-    { id: 7, image: one, name: "ラーメン C", cost: "$15" },
-    { id: 8, image: one, name: "鯖の塩焼き", cost: "$10" },
-    { id: 9, image: one, name: "弁当 B", cost: "$10" },
-    { id: 10, image: one, name: "お茶", cost: "$2" },
-    { id: 11, image: one, name: "握り寿司", cost: "$10" },
-    { id: 12, image: one, name: "Assorted Bread", cost: "$2" }
+    { id: 1, image: oneB, name: "オムライス", cost: "$20" },
+    { id: 2, image: two, name: "ラーメン A", cost: "$15" },
+    { id: 3, image: three, name: "弁当 C", cost: "$10" },
+    { id: 4, image: four, name: "アイスクリーム", cost: "$5" },
+    { id: 5, image: five, name: "弁当 A", cost: "$8" },
+    { id: 6, image: six, name: "ラーメン B", cost: "$15" },
+    { id: 7, image: seven, name: "ラーメン C", cost: "$15" },
+    { id: 8, image: eight, name: "鯖の塩焼き", cost: "$10" },
+    { id: 9, image: nine, name: "弁当 B", cost: "$10" },
+    { id: 10, image: ten, name: "お茶", cost: "$2" },
+    { id: 11, image: eleven, name: "握り寿司", cost: "$10" },
+    { id: 12, image: twelve, name: "Assorted Bread", cost: "$2" }
   ];
   let parent = document.getElementById("store");
   if (parent.innerHTML.length == 0) {

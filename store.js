@@ -22,11 +22,6 @@ window.onload = function() {
     "Anime Food/q.png"
   ];
   item();
-  console.log(
-    array.map(el => {
-      return el.src;
-    })
-  );
   for (let p = 0; p < load.length; p++) {
     load[p].setAttribute("src", newImgSrc[p]);
   }
