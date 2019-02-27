@@ -225,6 +225,7 @@ video {
   height: 80%;
   text-align: end;
   padding: 25px;
+  overflow: hidden;
 }
 .about-box > p {
   color: rgb(13, 29, 62);
@@ -241,6 +242,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background: white; */
 }
 
 #cart-box {
