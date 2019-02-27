@@ -7,19 +7,19 @@ window.onload = function() {
   let array = Array.from(document.getElementsByClassName("loading"));
   let load = document.getElementsByClassName("loading");
   let newImgSrc = [
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/j.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/a.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/b.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/c.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/d.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/e.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/f.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/i.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/n.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/h.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/o.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/p.png",
-    "http://127.0.0.1:5500/jemilalghani.github.io/Anime%20Food/q.png"
+    "Anime Food/j.png",
+    "Anime Food/a.png",
+    "Anime Food/b.png",
+    "Anime Food/c.png",
+    "Anime Food/d.png",
+    "Anime Food/e.png",
+    "Anime Food/f.png",
+    "Anime Food/i.png",
+    "Anime Food/n.png",
+    "Anime Food/h.png",
+    "Anime Food/o.png",
+    "Anime Food/p.png",
+    "Anime Food/q.png"
   ];
   item();
   console.log(
