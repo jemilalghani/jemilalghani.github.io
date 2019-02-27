@@ -1,14 +1,19 @@
 window.onload = function() {
-  let array = Array.from(document.getElementsByClassName("loading"));
-  let load = document.getElementsByClassName("loading");
-  console.log(
-    array.map(el => {
-      return el.src;
-    })
-  );
-  for (let p = 0; p < load.length; p++) {
-    console.log(load[p].attributes);
+  let loadinggif = document.getElementsByClassName("load");
+  for (let i = 0; i < loadinggif.length; i++) {
+    loadinggif[i].style["visibility"] = "visible";
   }
+  document.getElementById("gif").style.visibility = "hidden";
+  // let array = Array.from(document.getElementsByClassName("loading"));
+  // let load = document.getElementsByClassName("loading");
+  // console.log(
+  //   array.map(el => {
+  //     return el.src;
+  //   })
+  // );
+  // for (let p = 0; p < load.length; p++) {
+  //   console.log(load[p].attributes);
+  // }
 };
 let myAudio = document.getElementById("chopsound");
 function togglePlay() {

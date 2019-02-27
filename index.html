@@ -94,34 +94,22 @@
     </section>
     <section id="home">
       <a id="title-link" href="#about"><h1 class="site">itadakimasu</h1></a>
-      <div class="video-box ramen" id="ramen">
+      <div class="video-box ramen load" id="ramen">
         <video height="300" loop autoplay muted>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7587.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7587.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box egg" id="egg">
+      <div class="video-box egg load" id="egg">
         <video id="egg" height="300" loop autoplay muted>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7617.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7617.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box fish" id="fish">
+      <div class="video-box fish load" id="fish">
         <video id="fish" height="300" loop autoplay muted>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7589.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7589.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box chop" onclick="togglePlay()" id="chop">
+      <div class="video-box chop load" onclick="togglePlay()" id="chop">
         <img
           src="Anime Food/speaker (1).svg"
           onclick="togglePlay()"
@@ -129,40 +117,29 @@
           id="sound"
         />
         <video id="chopsound" height="300" autoplay muted loop>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7613.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7613.mp4" type="video/mp4" />
         </video>
       </div>
       <!-- not displayed -->
       <div class="video-box bento">
-        <video id="bento" height="300" loop autoplay muted>
+        <!-- <video id="bento" height="300" loop autoplay muted>
           <source
             class="loading"
-            src="./Anime Food/IMG_7591.mp4"
+            src="./Anime Food/donut.gif"
             type="video/mp4"
           />
-        </video>
+        </video> -->
+        <img id="gif" src="Anime Food/donut.gif" width="200px" />
       </div>
       <!--  -->
-      <div class="video-box cup" id="cup">
+      <div class="video-box cup load" id="cup">
         <video id="cup" height="300" loop autoplay muted>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7592.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7592.mp4" type="video/mp4" />
         </video>
       </div>
-      <div class="video-box takoyaki" id="takoyaki">
+      <div class="video-box takoyaki load" id="takoyaki">
         <video id="takoyaki" height="300" loop autoplay muted>
-          <source
-            class="loading"
-            src="./Anime Food/IMG_7619.mp4"
-            type="video/mp4"
-          />
+          <source src="./Anime Food/IMG_7619.mp4" type="video/mp4" />
         </video>
       </div>
       <!-- <div class="video-box pink"></div> -->
@@ -227,7 +204,7 @@
     </div>
     <section id="cart-box">
       <div id="active-cart">
-        <h1>Cart</h1>
+        <a href="#store"><h1>Cart</h1></a>
         <div id="total">
           <p>Total:</p>
           <p id="totalCost">$0</p>

@@ -109,6 +109,10 @@ nav {
   transform: translateX(-50%);
   transition: margin 0.5s;
 }
+.load {
+  visibility: hidden;
+  /* visibility: visible; */
+}
 .ramen {
   left: 30%;
   height: 200px;
@@ -166,10 +170,10 @@ nav {
 .bento {
   width: 200px;
   height: 200px;
-  /* z-index: 1;
-  top: -960px;
-  left: 30%;*/
-  visibility: hidden;
+  z-index: 5;
+  top: -900px;
+  left: 50%;
+  /* visibility: hidden; */
 }
 .pink {
   width: 400px;
@@ -467,7 +471,7 @@ input:hover {
 #cart-value {
   margin: 5px 0 10px 0;
 }
-#active-cart > h1 {
+#active-cart > a {
   font-size: 25px;
   color: navy;
   letter-spacing: 1px;
@@ -503,4 +507,7 @@ input:hover {
 }
 #totalCost {
   margin: 0 0 0 5px;
+}
+#gif {
+  filter: grayscale(100);
 }
