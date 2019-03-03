@@ -22,7 +22,6 @@ function header() {
   } else {
     let bigLogo = document.getElementById("logo");
     let bigLogoOutline = document.getElementById("logo-outline");
-    // bigLogo.onmouseout.style.height = "120px";
     bigLogo.style.width = "120px";
     bigLogo.className = "";
     bigLogoOutline.style.width = "120px";
@@ -41,7 +40,6 @@ function header() {
 }
 function item() {
   const add = "./Anime Food/add-button-inside-black-circle.svg";
-  // const one = "Anime Food/yellowsushi.gif";
   const oneB = "./Anime Food/a.png";
   const two = "./Anime Food/b.png";
   const three = "./Anime Food/c.png";
@@ -98,7 +96,6 @@ function item() {
         let populate = document.getElementById("item-cost");
         let populateName = document.getElementById("item-name");
         let populateImage = document.getElementById("item-image");
-        // console.log(populate.hasChildNodes());
         if (populate.hasChildNodes()) {
           populate.removeChild(populate.childNodes[0]);
           populate.append(store[i].cost);

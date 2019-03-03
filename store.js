@@ -56,14 +56,14 @@ function calcTotal() {
   let listOfCart = document.getElementsByClassName("addingItem");
   listOfCart = Array.from(listOfCart);
   let arrOfCart = listOfCart.map(el => {
-    let h = el.innerHTML.indexOf("$");
-    let he = el.innerHTML.slice(h + 1);
-    if (he.indexOf("X") === -1) {
-      return parseInt(he);
+    let indexOfMoney = el.innerHTML.indexOf("$");
+    let costPerItem = el.innerHTML.slice(indexOfMoney + 1);
+    if (costPerItem.indexOf("X") === -1) {
+      return parseInt(costPerItem);
     } else {
-      let l = he.indexOf("X");
-      let a = he.slice(0, l);
-      let b = he.slice(l + 1);
+      let indexOfAmount = costPerItem.indexOf("X");
+      let a = costPerItem.slice(0, indexOfAmount);
+      let b = costPerItem.slice(indexOfAmount + 1);
       return parseInt(a) * parseInt(b);
     }
   });
@@ -107,7 +107,14 @@ function addToCart() {
     document.getElementById("addToCart").value = "Add To Cart";
   }, 802);
 }
-function editOrAdd(item, bag, amount, outer, last, icon) {
+function editOrAdd(
+  item,
+  outsideDiv,
+  amount,
+  collectionOfOutsideDiv,
+  bag,
+  icon
+) {
   let check = document.getElementsByClassName("addingItem");
   if (check.length) {
     check = Array.from(check);
@@ -118,8 +125,8 @@ function editOrAdd(item, bag, amount, outer, last, icon) {
       return el.innerHTML.slice(0, text + 1);
     });
     if (newArray.indexOf(resulttwo) == -1) {
-      last.append(bag);
-      bag.append(item, icon);
+      bag.append(outsideDiv);
+      outsideDiv.append(item, icon);
     } else {
       for (let i = 0; i < check.length; i++) {
         let innerText = check[i].innerHTML.indexOf("$");
@@ -127,7 +134,7 @@ function editOrAdd(item, bag, amount, outer, last, icon) {
           check[i].innerHTML.slice(0, innerText) ==
           item.innerHTML.slice(0, innerText)
         ) {
-          newouter = Array.from(outer);
+          newouter = Array.from(collectionOfOutsideDiv);
 
           let newThing = newouter.map(val => {
             let dollarSign = val.outerText.indexOf("$");
@@ -135,31 +142,35 @@ function editOrAdd(item, bag, amount, outer, last, icon) {
           });
           let thing = item.innerHTML.slice(0, innerText);
           let index = newThing.indexOf(thing);
-          if (outer[index].innerText.indexOf("X") == -1) {
+          if (collectionOfOutsideDiv[index].innerText.indexOf("X") == -1) {
             amount++;
           } else {
             amount =
               parseInt(
-                outer[index].innerText.slice(
-                  outer[index].innerText.indexOf("X") + 1
+                collectionOfOutsideDiv[index].innerText.slice(
+                  collectionOfOutsideDiv[index].innerText.indexOf("X") + 1
                 )
               ) + parseInt(amount);
           }
           let k = item.innerHTML.indexOf("X");
           if (amount > 5) amount = 5;
-          outer[index].removeChild(outer[index].childNodes[0]);
-          outer[index].removeChild(outer[index].childNodes[0]);
+          collectionOfOutsideDiv[index].removeChild(
+            collectionOfOutsideDiv[index].childNodes[0]
+          );
+          collectionOfOutsideDiv[index].removeChild(
+            collectionOfOutsideDiv[index].childNodes[0]
+          );
           k !== -1
             ? (item.innerHTML = item.innerHTML.slice(0, k) + "X" + amount)
             : (item.innerHTML = item.innerHTML + "X" + amount);
-          outer[index].append(item, icon);
+          collectionOfOutsideDiv[index].append(item, icon);
           break;
         }
       }
     }
   } else {
-    last.append(bag);
-    bag.append(item, icon);
+    bag.append(outsideDiv);
+    outsideDiv.append(item, icon);
   }
 }
 function removeFromCart() {
